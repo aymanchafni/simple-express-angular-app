@@ -6,6 +6,11 @@ var bodyParser = require('body-parser');
 var profile = require('./routes/profile');
 
 var app = express();
+const cors = require('cors');
+
+
+app.use(cors());
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -1,0 +1,52 @@
+/*global classes*/
+.title-text{
+    font: normal bold 50px/72px;
+    font-family: "azonix";
+    font-size: 50px;
+    color: var(--primary-color3);
+}
+.sous_title-text{
+    font: normal bold 50px/72px;
+    color: #B6A6CB;
+    font-size: 18px;
+    font-family: "azonix";
+}
+.para{
+    font: normal bold 50px/72px;
+    color: #777B86;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
+}
+
+.font-size-16{
+    font-size: 16px;
+}
+.font-size-20{
+    font-size: 20px;
+}
+
+.bg-color{
+    background: #181818;
+    border-right: 2px solid var(--primary-color2);
+}
+.font-size-40{
+    font-size: 40px;
+}
+.text-border{
+    color: var(--border-color2);
+}
+
+.logo-color{
+    color: var(--primary-color1);
+}
+.font-size-28{
+    font-size: 28px;
+}
+
+.categorie{
+    color: white;
+    border-bottom: 4px solid rgba(121, 6, 228, 0.938);
+    width: 6.5rem;
+}

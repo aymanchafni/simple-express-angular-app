@@ -1,0 +1,120 @@
+
+
+/*CSS variables*/
+@import url(./partials/_variables.css);
+/*global css style*/
+@import url(./partials/_global.css);
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+}
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: left .5s ease;
+}
+#header nav{
+    height: 100vh;
+}
+#header .site-title{
+    display: flex;
+    justify-content: center;
+}
+#header .site-title a{
+    transform: scale(0.5);
+}
+#header .site-title h1{
+    position: absolute;
+}
+#header .profile_list h4:hover{
+    color: #B6A6CB;
+    
+}
+#header .profile_list h4{
+    cursor: pointer;
+}
+
+#header .profile_list .profile a{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/*login area */
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    overflow: hidden;
+    height: 100%;
+    width: 100%; 
+}
+.container .info{
+    padding: 2rem;
+    margin-top: 20%;
+    
+}
+.i_name,.i_email,.i_password{
+    margin: 0rem;
+    padding-bottom: 0.6rem;
+}
+
+.i_name input,
+.i_email input{
+    font-size: 1rem;
+    color: aliceblue;
+    background: var(--border-color1);
+    border: none;
+    border-radius: 3rem;
+    width: 70%;
+    padding-left: 2rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    margin: 0.1rem;
+    outline: none;
+}
+.i_password input{
+    font-size: 1rem;
+    color: aliceblue;
+    background: transparent;
+    border: 2px solid var(--border-color1);
+    border-radius: 3rem;
+    width: 70%;
+    padding-left: 2rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    margin: 0.1rem;
+    outline: none;
+}
+.buttons .login_btn{
+    font-size: 1rem;
+    color: aliceblue;
+    background: var(--primary-color3);
+    border: solid 2px var(--primary-color1);
+    border-radius: 3rem;
+    padding: 0.4em 2rem;
+    margin: 0.1rem;
+    cursor: pointer;  
+    outline: none;
+}
+.buttons .sign_btn{
+    font-size: 1rem;
+    color: aliceblue;
+    background: transparent;
+    border: solid 2px var(--primary-color1);
+    border-radius: 3rem;
+    padding: 0.4em 2rem;
+    margin: 0.1rem;
+    cursor: pointer;  
+    outline: none;
+}
+.view img{
+    height:100% ;
+    width: 100%;
+}
+/*end login area*/
+
+

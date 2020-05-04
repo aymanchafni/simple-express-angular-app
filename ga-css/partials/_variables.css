@@ -1,0 +1,31 @@
+html,body{
+    margin: 0%;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+/*CSS variables*/
+:root{
+    --primary-color1:#5D3E89;
+    --primary-color2:#6F3FCB;
+    --primary-color3:#9C5FEB;
+
+    --border-color1:#323A3D;
+    --border-color2:#38393C;
+    --border-color3:#232527;
+
+    --bg-color:#1A1B1D;
+    --black-color:#181818;
+    
+
+    
+    --gradiant-color:linear-gradient(90deg,#5D3E89 0%,#6F3FCB 100%);
+    --shadow-color: 0px 10px 30px rgba(118,85,225,0.3);
+    --box-color: 0px 10px 30px rgba(57,56,61,0.205);
+
+    /*font family variabels*/
+    --Roboto:'Roboto',cursive;
+}

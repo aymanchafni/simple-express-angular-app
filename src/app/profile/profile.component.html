@@ -1,1 +1,132 @@
-<p>profile works!</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>profile</title>
+  </head>
+  <body>
+
+    <div class="container p-5">
+
+<!--row img name and points of user -->
+
+      <div class="row border border-dark border-top-0  border-right-0  border-left-0">
+        <div class="col-2">
+
+        </div>
+        <div class="col-2">
+          <img class= "img-thumbnail" src="http://localhost/game-all-photos/{{user.id_user}}.jpg" alt="profile photo">
+        </div>
+        <div class="col-8">
+          <div class="align-bottom">
+            <p><b>{{user.first_name}} {{user.last_name}}</b></p>
+            <p><b>Points : {{user.points}}</b></p>
+
+          </div>
+
+        </div>
+
+      </div>
+<!--row container of the 2 columns -->
+
+      <div class="row">
+        <div class="col-2">
+
+        </div>
+
+  <!--user info form -->
+
+
+       <div class="col-4">
+        <legend  class="py-3"><b>Personal informations</b></legend>
+        <form class="needs-validation" [formGroup]="userForm" (ngSubmit)="onSubmitUserInfo()" p>
+
+       <div class="row">
+        <div class="form-group col">
+    		  <label for="first_name" class="col-form-label" [ngClass]="{ 'is-invalid': invalidFirstName() }">First Name</label>
+    		  <input type="text" class="form-control" id="first_name" name="first_name"  formControlName="first_name" placeholder="{{user.first_name}}">
+          <p *ngIf="invalidFirstName()" id="first_name_error" class="invalid-feedback">invalid name</p>
+        </div>
+
+        <div class="form-group col">
+          <label for="last_name" class="col-form-label" [ngClass]="{ 'is-invalid': invalidLastName() }">Last Name</label>
+          <input type="text" class="form-control" id="last name" name="last_name"  formControlName="last_name" placeholder="{{user.last_name}}">
+          <p *ngIf="invalidLastName()" id="last_name_error" class="invalid-feedback">invalid name</p>
+        </div>
+
+      </div>
+
+        <div class="form-group">
+          <label for="username" class="col-form-label" [ngClass]="{ 'is-invalid': invalidUsername() || invalidUsernameExists() }">Username</label>
+          <input type="text" class="form-control" id="username" name="username" formControlName="username" placeholder="{{user.username}}">
+          <p  *ngIf="invalidUsernameExists()" id="username_exists" class="invalid-feedback">username already exists!</p>
+          <p *ngIf="invalidUsername()" id="username_error"   class="invalid-feedback">invalid username</p>
+
+        </div>
+
+        <div class="form-group">
+    		  <label for="email" class="col-form-label" [ngClass]="{ 'is-invalid': invalidEmail() }">Email</label>
+    		  <input type="text" class="form-control" id="email" name="email" formControlName="email" placeholder="{{user.email}}">
+          <p *ngIf="invalidEmail()" id="email_error" class="invalid-feedback">invalid email</p>
+
+        </div>
+
+        <div class="form-group">
+    		  <label for="phone" class="col-form-label" [ngClass]="{ 'is-invalid': invalidPhoneNumber() }">Phone number</label>
+    		  <input type="text" class="form-control" id="phone" name="phone" formControlName="phone" placeholder="{{user.tel}}">
+          <p *ngIf="invalidPhoneNumber()" id="phone_number_error" class="invalid-feedback">invalid phone number</p>
+
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary float-right">Confirm</button>
+        </div>
+
+        </form>
+       </div>
+
+
+       <!--password change form -->
+
+       <div class="col-4">
+        <legend class="py-3"><b>Change password</b></legend>
+
+        <form class="needs-validation" [formGroup]="passForm" (ngSubmit)="onSubmitPassword()">
+
+          <div class="form-group">
+      		  <label for="current_password" class="col-form-label" [ngClass]="{ 'is-invalid': invalidCurrentPassword() }">Current password</label>
+      		  <input type="password" class="form-control" id="current_password" name="current_password" formControlName="current_password" placeholder="********">
+            <p *ngIf="invalidCurrentPassword()" id="current_password_error" class="invalid-feedback">The password is incorrect</p>
+
+
+          </div>
+
+          <div class="form-group">
+      		  <label for="new_password" class="col-form-label" [ngClass]="{ 'is-invalid': invalidNewPassword() }">New password</label>
+      		  <input type="password" class="form-control" id="new_password" name="new_password" formControlName="new_password" placeholder="********">
+            <p *ngIf="invalidNewPassword()" id="new_password_error" class="invalid-feedback">invalid password</p>
+
+          </div>
+
+          <div class="form-group">
+      		  <label for="confirm_password" class="col-form-label" [ngClass]="{ 'is-invalid': invalidConfirmationPassword() }">Confirm password</label>
+      		  <input type="password" class="form-control" id="confirm_password" name="confirm_password" formControlName="confirm_password" placeholder="********">
+            <p *ngIf="invalidConfirmationPassword()" id="password_confirmation_error" class="invalid-feedback">invalid confirmation</p>
+
+          </div>
+          <div class="form-group">
+          <button type="submit" class="btn btn-primary float-right">Change</button>
+          </div>
+
+        </form>
+       </div>
+       <div class="col-2">
+
+       </div>
+
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
