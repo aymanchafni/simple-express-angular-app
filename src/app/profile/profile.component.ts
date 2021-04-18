@@ -157,7 +157,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
    check_pass_correct(pass,callback)
    {
      let correct : boolean = true;
-     let pass_md5 = this.md5.appendStr(pass).end();
+     let pass_md5 = this.md5.appendStr(pass).end().toString();
      let params : HttpParams = new HttpParams()
                                .set('pass',pass_md5);
 
@@ -177,8 +177,8 @@ export class ProfileComponent implements OnInit,OnDestroy {
 
    submit_new_pass(new_pass)
    {
-     let body = {new_pass : ''};
-     body.new_pass = this.md5.appendStr(new_pass).end();
+     let body = { new_pass: '' };
+     body.new_pass = this.md5.appendStr(new_pass).end().toString();
      this.subscriber5= this.route.params.subscribe(param => {
 
            this.http.put('http://localhost:3000/api/v1/profile/pass/' + param.uid, body).subscribe((res:any) => {
