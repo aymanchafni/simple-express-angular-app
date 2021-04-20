@@ -24,6 +24,13 @@ steps:
   inputs:
     targetFolder: '$(Build.ArtifactStagingDirectory)'    
 
+- task: Artifacts-Compress@2
+  inputs:
+    source: '$(Build.ArtifactStagingDirectory)'
+    dest: '$(Build.ArtifactStagingDirectory)'
+    compressionLevel: 'Fastest'
+    multiplePackages: true
+    cleanDest: false
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
   inputs:
